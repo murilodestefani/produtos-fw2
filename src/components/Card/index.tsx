@@ -40,7 +40,7 @@ const Card: React.FC<CardProps> = ({
         </CardHeader>
         <CardDescription>{description}</CardDescription>
         <CardFooter>
-          <CardButton href={buttonUrl}>
+          <CardButton as="a" href={buttonUrl}>
             <ShoppingCartSimple /> Ver Produto
           </CardButton>
           <CardButtonFavorito>

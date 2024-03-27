@@ -31,7 +31,7 @@ export function Produto() {
 
   return (
     <>
-      <div className="banner">
+      <div className="bannerProduto">
         <h1>Produto</h1>
       </div>
       <main>

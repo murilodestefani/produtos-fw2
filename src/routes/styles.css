@@ -1,0 +1,12 @@
+.carregando {
+  width: 100svw;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carregando span {
+  font-size: 24px;
+  font-weight: bold;
+}

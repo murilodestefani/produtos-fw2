@@ -76,7 +76,7 @@ button:hover {
   transition: all 0.25s;
 }
 
-.banner {
+.bannerHome {
   width: 100svw;
   height: 200px;
   background: var(--secondary) url("../../assets/images/bgHome.jpg") no-repeat
@@ -88,7 +88,7 @@ button:hover {
   z-index: 0;
 }
 
-.banner::after {
+.bannerHome::after {
   position: absolute;
   content: "";
   width: 100%;
@@ -96,9 +96,94 @@ button:hover {
   background-color: rgba(0, 0, 0, 0.6);
 }
 
-.banner h1 {
+.bannerHome h1 {
   position: absolute;
   color: var(--white);
   font-size: 48px;
   z-index: 1;
+}
+
+.bannerProduto {
+  width: 100svw;
+  height: 200px;
+  background: var(--secondary) url("../../assets/images/bgProduto.jpg")
+    no-repeat center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 0;
+}
+
+.bannerProduto::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.bannerProduto h1 {
+  position: absolute;
+  color: var(--white);
+  font-size: 48px;
+  z-index: 1;
+}
+
+.bannerProdutos {
+  width: 100svw;
+  height: 200px;
+  background: var(--secondary) url("../../assets/images/bgProdutos.jpg")
+    no-repeat center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 0;
+}
+
+.bannerProdutos::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.bannerProdutos h1 {
+  position: absolute;
+  color: var(--white);
+  font-size: 48px;
+  z-index: 1;
+}
+
+.bannerFavoritos {
+  width: 100svw;
+  height: 200px;
+  background: var(--secondary) url("../../assets/images/bgFavoritos.jpg")
+    no-repeat center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 0;
+}
+
+.bannerFavoritos::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.bannerFavoritos h1 {
+  position: absolute;
+  color: var(--white);
+  font-size: 48px;
+  z-index: 1;
+}
+
+.linkCard {
+  text-decoration: none;
 }

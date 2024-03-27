@@ -29,7 +29,7 @@ export function Produtos() {
 
   return (
     <>
-      <div className="banner">
+      <div className="bannerProdutos">
         <h1>Produtos</h1>
       </div>
       <main>

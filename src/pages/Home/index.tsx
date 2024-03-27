@@ -29,8 +29,8 @@ export function Home() {
 
   return (
     <>
-      <div className="banner">
-        <h1>Nossa Vitrine</h1>
+      <div className="bannerHome">
+        <h1>Vitrine</h1>
       </div>
       <main>
         <section className="vitrine">

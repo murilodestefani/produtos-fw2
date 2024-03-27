@@ -41,15 +41,22 @@ const CardHeader = styled.div`
 `;
 
 const CardTitle = styled.h2`
-  font-size: 18px;
+  width: 70%;
+  font-size: 14px;
   font-weight: 800;
+  text-transform: capitalize;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
 `;
 
 const CardPrice = styled.p`
-  font-size: 16px;
+  font-size: 14px;
 `;
 
 const CardDescription = styled.p`
+  height: 72px;
   font-size: 12px;
   color: #737373;
   overflow: hidden;
@@ -75,7 +82,15 @@ const CardButton = styled.button`
   gap: 8px;
   width: 80%;
   font-size: 14px;
+  border-radius: 8px;
+  text-decoration: none;
   cursor: pointer;
+  transition: all 0.25s;
+
+  &:hover {
+    background-color: var(--secondary);
+    transition: all 0.25s;
+  }
 `;
 
 const CardButtonFavorito = styled.button`

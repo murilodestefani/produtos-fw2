@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import "./styles.css";
 import Card from "../../components/Card";
+import "./styles.css";
 
 interface ProdutoProps {
   id: string;
@@ -10,12 +10,12 @@ interface ProdutoProps {
   description: string;
 }
 
-export function Home() {
+export function Produtos() {
   const [produtos, setProdutos] = useState<ProdutoProps[]>([]);
 
   useEffect(() => {
     function getProducts() {
-      fetch("https://dummyjson.com/products?limit=6")
+      fetch("https://dummyjson.com/products")
         .then((response) => response.json())
         .then((data) => {
           setProdutos(data.products);
@@ -30,21 +30,22 @@ export function Home() {
   return (
     <>
       <div className="banner">
-        <h1>Nossa Vitrine</h1>
+        <h1>Produtos</h1>
       </div>
       <main>
-        <section className="vitrine">
+        <div className="produtosList">
           {produtos.map((produto, index) => (
-            <Card
-              key={index}
-              imageUrl={produto.thumbnail}
-              title={produto.title}
-              price={produto.price}
-              description={produto.description}
-              buttonUrl={`/produtos/${produto.id}`}
-            />
+            <div key={index}>
+              <Card
+                imageUrl={produto.thumbnail}
+                title={produto.title}
+                price={produto.price}
+                description={produto.description}
+                buttonUrl={`/produtos/${produto.id}`}
+              />
+            </div>
           ))}
-        </section>
+        </div>
       </main>
     </>
   );

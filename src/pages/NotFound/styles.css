@@ -1,0 +1,30 @@
+.error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  width: 100svw;
+  min-height: 100svh;
+}
+
+.error img {
+  width: auto;
+  height: 240px;
+  object-fit: contain;
+}
+
+.error h1 {
+  font-size: 52px;
+  font-weight: 800;
+  color: var(--secondary);
+}
+
+.error h2 {
+  font-size: 28px;
+}
+
+.error button {
+  background-color: var(--secondary);
+  color: var(--white);
+}

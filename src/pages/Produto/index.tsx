@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import "./styles.css";
+import { useParams } from "react-router-dom";
 import Card from "../../components/Card";
+import "./styles.css";
 
 interface ProdutoProps {
   id: string;
@@ -10,40 +11,40 @@ interface ProdutoProps {
   description: string;
 }
 
-export function Home() {
-  const [produtos, setProdutos] = useState<ProdutoProps[]>([]);
+export function Produto() {
+  const [produto, setProduto] = useState<ProdutoProps | null>(null);
+  const { id } = useParams<string>();
 
   useEffect(() => {
-    function getProducts() {
-      fetch("https://dummyjson.com/products?limit=6")
+    function getProduct() {
+      fetch(`https://dummyjson.com/products/${id}`)
         .then((response) => response.json())
         .then((data) => {
-          setProdutos(data.products);
+          setProduto(data);
         })
         .catch((error) => {
           console.log(error);
         });
     }
-    getProducts();
-  }, []);
+    getProduct();
+  }, [id]);
 
   return (
     <>
       <div className="banner">
-        <h1>Nossa Vitrine</h1>
+        <h1>Produto</h1>
       </div>
       <main>
-        <section className="vitrine">
-          {produtos.map((produto, index) => (
+        <section className="produto">
+          {produto && (
             <Card
-              key={index}
               imageUrl={produto.thumbnail}
               title={produto.title}
               price={produto.price}
               description={produto.description}
               buttonUrl={`/produtos/${produto.id}`}
             />
-          ))}
+          )}
         </section>
       </main>
     </>

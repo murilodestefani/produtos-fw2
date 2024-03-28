@@ -3,6 +3,7 @@ import { FormEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../../services/firebaseConnection";
 import "./styles.css";
+import userImg from "../../assets/images/user.png"
 
 export function Login() {
   const [email, setEmail] = useState("");
@@ -30,21 +31,24 @@ export function Login() {
 
   return (
     <main>
-      <form className="formLogin" onSubmit={handleSubmit}>
-        <input
-          type="email"
-          placeholder="email@exemplo.com"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <input
-          type="password"
-          placeholder="********"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <button type="submit">Entrar</button>
-      </form>
+      <section className="login">
+        <form className="formLogin" onSubmit={handleSubmit}>
+        <img src={userImg} alt="" />
+          <input
+            type="email"
+            placeholder="email@exemplo.com"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <input
+            type="password"
+            placeholder="********"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <button type="submit">Entrar</button>
+        </form>
+      </section>
     </main>
   );
 }

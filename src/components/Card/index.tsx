@@ -33,10 +33,12 @@ const Card: React.FC<CardProps> = ({
   function handleBookmark() {
     addDoc(collection(db, "bookmarks"), {
       Produto: title,
+      Descricao: description,
+      Preco: price,
       bookmarkedAt: new Date(),
     })
       .then(() => {
-        alert("Favoritado com sucesso!");
+        alert("Adicionado aos Favoritos!");
       })
       .catch((error) => {
         alert(`Erro ao favoritar: ${error}`);
@@ -44,26 +46,26 @@ const Card: React.FC<CardProps> = ({
   }
 
   return (
-      <CardContainer>
-        <CardImage>
-          <CardPhoto src={imageUrl} />
-        </CardImage>
-        <CardBody>
-          <CardHeader>
-            <CardTitle>{title}</CardTitle>
-            <CardPrice>${price} BRL</CardPrice>
-          </CardHeader>
-          <CardDescription>{description}</CardDescription>
-          <CardFooter>
-            <CardButton as="a" href={buttonUrl}>
-              <ShoppingCartSimple /> Ver Produto
-            </CardButton>
-            <CardButtonFavorito onClick={handleBookmark}>
-              <Heart weight="fill" />
-            </CardButtonFavorito>
-          </CardFooter>
-        </CardBody>
-      </CardContainer>
+    <CardContainer>
+      <CardImage>
+        <CardPhoto src={imageUrl} />
+      </CardImage>
+      <CardBody>
+        <CardHeader>
+          <CardTitle>{title}</CardTitle>
+          <CardPrice>${price} BRL</CardPrice>
+        </CardHeader>
+        <CardDescription>{description}</CardDescription>
+        <CardFooter>
+          <CardButton as="a" href={buttonUrl}>
+            <ShoppingCartSimple /> Ver Produto
+          </CardButton>
+          <CardButtonFavorito onClick={handleBookmark}>
+            <Heart weight="fill" />
+          </CardButtonFavorito>
+        </CardFooter>
+      </CardBody>
+    </CardContainer>
   );
 };
 

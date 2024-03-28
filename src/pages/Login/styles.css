@@ -1,0 +1,6 @@
+.formLogin {
+  background-color: var(--primary);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}

@@ -14,7 +14,6 @@ import {
   CardButtonFavorito,
 } from "../styled-components/Card/styles";
 import { Heart, ShoppingCartSimple } from "@phosphor-icons/react";
-import { Link } from "react-router-dom";
 
 interface CardProps {
   imageUrl: string;
@@ -45,7 +44,6 @@ const Card: React.FC<CardProps> = ({
   }
 
   return (
-    <Link className="linkCard" to={buttonUrl}>
       <CardContainer>
         <CardImage>
           <CardPhoto src={imageUrl} />
@@ -66,7 +64,6 @@ const Card: React.FC<CardProps> = ({
           </CardFooter>
         </CardBody>
       </CardContainer>
-    </Link>
   );
 };
 

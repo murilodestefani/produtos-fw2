@@ -32,9 +32,10 @@ const Card: React.FC<CardProps> = ({
 }) => {
   function handleBookmark() {
     addDoc(collection(db, "bookmarks"), {
-      Produto: title,
-      Descricao: description,
-      Preco: price,
+      imageUrl: imageUrl,
+      title: title,
+      description: description,
+      price: price,
       bookmarkedAt: new Date(),
     })
       .then(() => {

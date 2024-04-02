@@ -1,36 +1,44 @@
-import { useState, useEffect } from "react";
-import { db } from "../../services/firebaseConnection";
-import { collection, getDocs, QueryDocumentSnapshot } from "firebase/firestore";
-import "./styles.css";
+import { collection, onSnapshot, query } from 'firebase/firestore';
+import './styles.css';
+import { db } from '../../services/firebaseConnection';
+import { useEffect, useState } from 'react';
+import Card from '../../components/Card';
 
 interface FavoritoProps {
   id: string;
-  data: any;
+  imageUrl: string;
+  title: string;
+  description: string;
+  price: string;
+  bookmarkedAt: string;
 }
 
 export function Favoritos() {
+  const bookmarksCollection = collection(db, 'bookmarks');
+  const queryRef = query(bookmarksCollection);
   const [favoritos, setFavoritos] = useState<FavoritoProps[]>([]);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const querySnapshot = await getDocs(collection(db, "bookmarks"));
-        const fetchedFavoritos: FavoritoProps[] = [];
-        querySnapshot.forEach((doc: QueryDocumentSnapshot) => {
-          fetchedFavoritos.push({
+    function getFavoritos() {
+      onSnapshot(queryRef, (snapshot) => {
+        const lista = [] as FavoritoProps[];
+
+        snapshot.forEach((doc) => {
+          lista.push({
             id: doc.id,
-            data: doc.data(),
+            imageUrl: doc.data().imageUrl,
+            title: doc.data().title,
+            description: doc.data().description,
+            price: doc.data().price,
+            bookmarkedAt: doc.data().bookmarkedAt.toDate().toLocaleString(),
           });
         });
-        setFavoritos(fetchedFavoritos);
-        console.log("Favoritos:", fetchedFavoritos);
-      } catch (error) {
-        console.error("Erro ao buscar documentos:", error);
-      }
-    };
 
-    fetchData();
-  }, []);
+        setFavoritos(lista);
+      });
+    }
+    getFavoritos();
+  }, [queryRef]);
 
   return (
     <>
@@ -38,14 +46,19 @@ export function Favoritos() {
         <h1>Favoritos</h1>
       </div>
       <main>
-        <section className="favoritos">
-          {favoritos.map((favorito) => (
-            <div key={favorito.id}>
-              <h4>ID: {favorito.id}</h4>
-              <pre>{JSON.stringify(favorito.data, null, 2)}</pre>
+        <div className="favoritosList">
+          {favoritos.map((favorito, index) => (
+            <div key={index}>
+              <Card
+                imageUrl={favorito.imageUrl}
+                title={favorito.title}
+                price={favorito.price}
+                description={favorito.description}
+                buttonUrl="/favoritos"
+              />
             </div>
           ))}
-        </section>
+        </div>
       </main>
     </>
   );

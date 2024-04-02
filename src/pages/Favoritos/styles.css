@@ -21,3 +21,11 @@
 pre {
   color: var(--black);
 }
+
+.favoritosList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: center;
+  align-items: center;
+}

@@ -12,7 +12,7 @@
   padding: 0;
   overflow-x: hidden;
   font-style: normal;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-optical-sizing: auto;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -81,7 +81,7 @@ button:hover {
   justify-content: center;
   align-items: center;
   z-index: 0;
-  background: var(--secondary) url("../../assets/images/bgHome.jpg") no-repeat
+  background: var(--secondary) url('../../assets/images/bgHome.jpg') no-repeat
     center;
   background-size: cover;
   width: 100svw;
@@ -93,7 +93,7 @@ button:hover {
   background-color: rgba(0, 0, 0, 0.6);
   width: 100%;
   height: 100%;
-  content: "";
+  content: '';
 }
 
 .bannerHome h1 {
@@ -109,7 +109,7 @@ button:hover {
   justify-content: center;
   align-items: center;
   z-index: 0;
-  background: var(--secondary) url("../../assets/images/bgProduto.jpg")
+  background: var(--secondary) url('../../assets/images/bgProduto.jpg')
     no-repeat center;
   background-size: cover;
   width: 100svw;
@@ -121,7 +121,7 @@ button:hover {
   background-color: rgba(0, 0, 0, 0.6);
   width: 100%;
   height: 100%;
-  content: "";
+  content: '';
 }
 
 .bannerProduto h1 {
@@ -137,7 +137,7 @@ button:hover {
   justify-content: center;
   align-items: center;
   z-index: 0;
-  background: var(--secondary) url("../../assets/images/bgProdutos.jpg")
+  background: var(--secondary) url('../../assets/images/bgProdutos.jpg')
     no-repeat center;
   background-size: cover;
   width: 100svw;
@@ -149,7 +149,7 @@ button:hover {
   background-color: rgba(0, 0, 0, 0.6);
   width: 100%;
   height: 100%;
-  content: "";
+  content: '';
 }
 
 .bannerProdutos h1 {
@@ -165,7 +165,7 @@ button:hover {
   justify-content: center;
   align-items: center;
   z-index: 0;
-  background: var(--secondary) url("../../assets/images/bgFavoritos.jpg")
+  background: var(--secondary) url('../../assets/images/bgFavoritos.jpg')
     no-repeat center;
   background-size: cover;
   width: 100svw;
@@ -177,7 +177,7 @@ button:hover {
   background-color: rgba(0, 0, 0, 0.6);
   width: 100%;
   height: 100%;
-  content: "";
+  content: '';
 }
 
 .bannerFavoritos h1 {

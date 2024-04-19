@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
-import "./styles.css";
-import Card from "../../components/Card";
+import { useState, useEffect } from 'react';
+import './styles.css';
+import Card from '../../components/Card';
 
 interface ProdutoProps {
   id: string;
@@ -13,9 +13,11 @@ interface ProdutoProps {
 export function Home() {
   const [produtos, setProdutos] = useState<ProdutoProps[]>([]);
 
+  console.log(name);
+
   useEffect(() => {
     function getProducts() {
-      fetch("https://dummyjson.com/products?limit=6")
+      fetch('https://dummyjson.com/products?limit=6')
         .then((response) => response.json())
         .then((data) => {
           setProdutos(data.products);

@@ -1,6 +1,6 @@
-import { Package } from "@phosphor-icons/react";
-import { Link } from "react-router-dom";
-import "./styles.css";
+import { Package, ShoppingCart } from '@phosphor-icons/react';
+import { Link } from 'react-router-dom';
+import './styles.css';
 
 export function Header() {
   return (
@@ -20,6 +20,9 @@ export function Header() {
           Favoritos
         </Link>
       </nav>
+      <Link to="/">
+        <ShoppingCart weight="fill" />
+      </Link>
       <Link to="/login">
         <button>Login</button>
       </Link>

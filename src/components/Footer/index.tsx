@@ -4,13 +4,18 @@ import {
   Heart,
   InstagramLogo,
   Package,
-} from "@phosphor-icons/react";
-import { Link } from "react-router-dom";
-import "./style.css";
+} from '@phosphor-icons/react';
+import { Link } from 'react-router-dom';
+import './style.css';
+import { UserContext } from '../../context/user';
+import { useContext } from 'react';
 
 export function Footer() {
+  const { name } = useContext(UserContext);
+
   return (
     <footer>
+      <h2>{name}</h2>
       <Link to="/" className="logo">
         <Package weight="fill" className="icon" />
         <span>Produtos</span>

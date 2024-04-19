@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const CartContainer = styled.div`
   display: flex;
   align-items: center;
-  max-width: 480px;
+  width: 480px;
   height: fit-content;
   background-color: var(--white);
   border-radius: 8px;
@@ -24,6 +24,7 @@ const CartBody = styled.div`
   flex-direction: column;
   justify-content: center;
   gap: 8px;
+  flex-grow: 1;
 `;
 
 const CartTitle = styled.h3`

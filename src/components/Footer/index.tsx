@@ -16,13 +16,13 @@ export function Footer() {
         <span>Produtos</span>
       </Link>
       <div className="social">
-        <a href="#" target="_blank">
+        <a href="https://github.com/murilodestefani" target="_blank">
           <GithubLogo weight="fill" />
         </a>
-        <a href="#" target="_blank">
+        <a href="https://www.instagram.com/murilo_destefani/" target="_blank">
           <InstagramLogo weight="fill" />
         </a>
-        <a href="#" target="_blank">
+        <a href="https://www.facebook.com/destefanimurilo" target="_blank">
           <FacebookLogo weight="fill" />
         </a>
       </div>

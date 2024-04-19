@@ -3,7 +3,7 @@ import { UserContext } from '../../context/user';
 import './styles.css';
 
 export default function User() {
-  const { updateUser } = useContext(UserContext);
+  const { name, email, password, updateUser } = useContext(UserContext);
   const [userName, setUserName] = useState('');
   const [userEmail, setUserEmail] = useState('');
   const [userPassword, setUserPassword] = useState('');
@@ -12,19 +12,19 @@ export default function User() {
     <form className="formUser">
       <input
         type="text"
-        placeholder="nome do usuário"
+        placeholder={name}
         value={userName}
         onChange={(e) => setUserName(e.target.value)}
       />
       <input
         type="email"
-        placeholder="email@exemplo.com"
+        placeholder={email}
         value={userEmail}
         onChange={(e) => setUserEmail(e.target.value)}
       />
       <input
         type="password"
-        placeholder="********"
+        placeholder={password}
         value={userPassword}
         onChange={(e) => setUserPassword(e.target.value)}
       />

@@ -1,10 +1,10 @@
 header {
-  width: 100vw;
-  padding: 16px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: var(--primary);
+  padding: 16px 40px;
+  width: 100vw;
 }
 
 header .logo {
@@ -13,9 +13,9 @@ header .logo {
   align-items: center;
   gap: 4px;
   color: var(--white);
-  text-decoration: none;
   font-weight: bold;
   font-size: 18px;
+  text-decoration: none;
 }
 
 header .logo .icon {
@@ -28,13 +28,35 @@ header nav {
 }
 
 header nav .link {
+  transition: all 0.5s;
   color: var(--white);
   font-weight: 500;
   text-decoration: none;
-  transition: all 0.5s;
 }
 
 header nav .link:hover {
-  color: var(--secondary);
   transition: all 0.5s;
+  color: var(--secondary);
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.user {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.user p {
+  transition: all 0.5s;
+  color: var(--white);
+  font-size: 12px;
+}
+
+.user p:hover {
+  transition: all 0.5s;
+  color: var(--secondary);
 }

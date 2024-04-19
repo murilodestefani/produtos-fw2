@@ -6,11 +6,11 @@ import { UserProvider } from '../../context/user';
 export function Layout() {
   return (
     <>
-      <Header />
-      <Outlet />
       <UserProvider>
-        <Footer />
+        <Header />
       </UserProvider>
+      <Outlet />
+      <Footer />
     </>
   );
 }

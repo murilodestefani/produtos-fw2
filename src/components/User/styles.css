@@ -1,0 +1,38 @@
+.formUser {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  border-top: 8px solid var(--secondary);
+  border-radius: 16px;
+  background-color: var(--primary);
+  padding: 80px;
+  width: 600px;
+}
+
+.formUser input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 16px;
+  padding: 16px 24px;
+  width: 100%;
+  color: var(--black);
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.formUser input::placeholder {
+  color: var(--black);
+}
+
+.formUser button {
+  border-radius: 16px;
+  background-color: var(--secondary);
+  padding: 16px 32px;
+  color: var(--white);
+  font-weight: bold;
+  font-size: 16px;
+}

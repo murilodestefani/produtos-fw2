@@ -13,8 +13,9 @@ import {
   CardFooter,
   CardButton,
   CardButtonFavorito,
+  CardButtonVerProduto,
 } from '../styled-components/Card/styles';
-import { Heart, ShoppingCartSimple } from '@phosphor-icons/react';
+import { Eye, Heart, ShoppingCartSimple } from '@phosphor-icons/react';
 import { useContext } from 'react';
 
 interface CardProps {
@@ -34,7 +35,7 @@ const Card: React.FC<CardProps> = ({
 }) => {
   const { addItemCart } = useContext(CartContext);
 
-  function handdleAddToCart() {
+  function handleAddToCart() {
     const newItem = {
       img: imageUrl,
       title: title,
@@ -62,6 +63,9 @@ const Card: React.FC<CardProps> = ({
   return (
     <CardContainer>
       <CardImage>
+        <CardButtonFavorito onClick={handleBookmark}>
+          <Heart weight="bold" />
+        </CardButtonFavorito>
         <CardPhoto src={imageUrl} />
       </CardImage>
       <CardBody>
@@ -71,15 +75,12 @@ const Card: React.FC<CardProps> = ({
         </CardHeader>
         <CardDescription>{description}</CardDescription>
         <CardFooter>
-          <CardButton as="a" href={buttonUrl}>
-            <ShoppingCartSimple /> Ver Produto
+          <CardButton onClick={handleAddToCart}>
+            <ShoppingCartSimple weight="bold" /> Comprar
           </CardButton>
-          <CardButton onClick={handdleAddToCart}>
-            <ShoppingCartSimple /> Adicionar ao Carrinho
-          </CardButton>
-          <CardButtonFavorito onClick={handleBookmark}>
-            <Heart weight="fill" />
-          </CardButtonFavorito>
+          <CardButtonVerProduto as="a" href={buttonUrl}>
+            <Eye size={22} weight="bold" />
+          </CardButtonVerProduto>
         </CardFooter>
       </CardBody>
     </CardContainer>

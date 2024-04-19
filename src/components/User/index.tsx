@@ -1,5 +1,6 @@
 import { useContext, useState } from 'react';
 import { UserContext } from '../../context/user';
+import './styles.css';
 
 export default function User() {
   const { updateUser } = useContext(UserContext);
@@ -8,9 +9,7 @@ export default function User() {
   const [userPassword, setUserPassword] = useState('');
 
   return (
-    <div>
-      <h1>Usuário</h1>
-
+    <form className="formUser">
       <input
         type="text"
         placeholder="nome do usuário"
@@ -32,6 +31,6 @@ export default function User() {
       <button onClick={() => updateUser(userName, userEmail, userPassword)}>
         Atualizar Usuário
       </button>
-    </div>
+    </form>
   );
 }

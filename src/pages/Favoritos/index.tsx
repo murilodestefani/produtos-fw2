@@ -3,6 +3,7 @@ import './styles.css';
 import { db } from '../../services/firebaseConnection';
 import { useEffect, useState } from 'react';
 import Card from '../../components/Card';
+import { CartProvider } from '../../context/cart';
 
 interface FavoritoProps {
   id: string;
@@ -41,7 +42,7 @@ export function Favoritos() {
   }, [queryRef]);
 
   return (
-    <>
+    <CartProvider>
       <div className="bannerFavoritos">
         <h1>Favoritos</h1>
       </div>
@@ -60,7 +61,7 @@ export function Favoritos() {
           ))}
         </div>
       </main>
-    </>
+    </CartProvider>
   );
 }
 

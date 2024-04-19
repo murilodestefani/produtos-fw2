@@ -20,7 +20,7 @@ export function Header() {
           Favoritos
         </Link>
       </nav>
-      <Link to="/">
+      <Link to="/carrinho">
         <ShoppingCart weight="fill" />
       </Link>
       <Link to="/login">

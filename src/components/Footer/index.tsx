@@ -11,11 +11,13 @@ import { UserContext } from '../../context/user';
 import { useContext } from 'react';
 
 export function Footer() {
-  const { name } = useContext(UserContext);
+  const { name, email, password } = useContext(UserContext);
 
   return (
     <footer>
       <h2>{name}</h2>
+      <h3>{email}</h3>
+      <h4>{password}</h4>
       <Link to="/" className="logo">
         <Package weight="fill" className="icon" />
         <span>Produtos</span>

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Card from "../../components/Card";
 import "./styles.css";
+import { CartProvider } from '../../context/cart';
 
 interface ProdutoProps {
   id: string;
@@ -30,7 +31,7 @@ export function Produto() {
   }, [id]);
 
   return (
-    <>
+    <CartProvider>
       <div className="bannerProduto">
         <h1>Produto</h1>
       </div>
@@ -47,6 +48,6 @@ export function Produto() {
           )}
         </section>
       </main>
-    </>
+    </CartProvider>
   );
 }

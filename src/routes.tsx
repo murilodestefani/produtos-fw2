@@ -8,6 +8,7 @@ import { NotFound } from './pages/NotFound';
 import { Private } from './routes/Private';
 import { Favoritos } from './pages/Favoritos';
 import { Usuario } from './pages/Usuario';
+import { Carrinho } from './pages/Carrinho';
 
 const router = createBrowserRouter([
   {
@@ -39,7 +40,11 @@ const router = createBrowserRouter([
       },
       {
         path: '/usuario',
-        element: <Usuario />, 
+        element: <Usuario />,
+      },
+      {
+        path: '/carrinho',
+        element: <Carrinho />,
       },
       {
         path: '*',

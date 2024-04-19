@@ -1,5 +1,6 @@
-import { addDoc, collection } from "firebase/firestore";
-import { db } from "../../services/firebaseConnection";
+import { addDoc, collection } from 'firebase/firestore';
+import { db } from '../../services/firebaseConnection';
+import { CartContext } from '../../context/cart';
 import {
   CardContainer,
   CardImage,
@@ -12,8 +13,9 @@ import {
   CardFooter,
   CardButton,
   CardButtonFavorito,
-} from "../styled-components/Card/styles";
-import { Heart, ShoppingCartSimple } from "@phosphor-icons/react";
+} from '../styled-components/Card/styles';
+import { Heart, ShoppingCartSimple } from '@phosphor-icons/react';
+import { useContext } from 'react';
 
 interface CardProps {
   imageUrl: string;
@@ -30,8 +32,19 @@ const Card: React.FC<CardProps> = ({
   price,
   buttonUrl,
 }) => {
+  const { addItemCart } = useContext(CartContext);
+
+  function handdleAddToCart() {
+    const newItem = {
+      img: imageUrl,
+      title: title,
+      price: price,
+    };
+    addItemCart(newItem);
+  }
+
   function handleBookmark() {
-    addDoc(collection(db, "bookmarks"), {
+    addDoc(collection(db, 'bookmarks'), {
       imageUrl: imageUrl,
       title: title,
       description: description,
@@ -39,7 +52,7 @@ const Card: React.FC<CardProps> = ({
       bookmarkedAt: new Date(),
     })
       .then(() => {
-        alert("Adicionado aos Favoritos!");
+        alert('Adicionado aos Favoritos!');
       })
       .catch((error) => {
         alert(`Erro ao favoritar: ${error}`);
@@ -60,6 +73,9 @@ const Card: React.FC<CardProps> = ({
         <CardFooter>
           <CardButton as="a" href={buttonUrl}>
             <ShoppingCartSimple /> Ver Produto
+          </CardButton>
+          <CardButton onClick={handdleAddToCart}>
+            <ShoppingCartSimple /> Adicionar ao Carrinho
           </CardButton>
           <CardButtonFavorito onClick={handleBookmark}>
             <Heart weight="fill" />

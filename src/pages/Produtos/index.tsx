@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Card from "../../components/Card";
 import "./styles.css";
+import { CartProvider } from '../../context/cart';
 
 interface ProdutoProps {
   id: string;
@@ -28,7 +29,7 @@ export function Produtos() {
   }, []);
 
   return (
-    <>
+    <CartProvider>
       <div className="bannerProdutos">
         <h1>Produtos</h1>
       </div>
@@ -47,6 +48,6 @@ export function Produtos() {
           ))}
         </div>
       </main>
-    </>
+    </CartProvider>
   );
 }

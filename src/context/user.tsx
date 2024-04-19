@@ -1,4 +1,4 @@
-import { ReactNode, createContext, useState } from 'react';
+import { ReactNode, createContext, useEffect, useState } from 'react';
 
 interface UserProviderProps {
   children: ReactNode;
@@ -15,22 +15,31 @@ interface UserContextData {
 export const UserContext = createContext({} as UserContextData);
 
 export function UserProvider({ children }: UserProviderProps) {
-  const [name, setName] = useState('Murilo');
-  const [email, setEmail] = useState('murilo@email.com');
-  const [password, setPassword] = useState('123123');
+  const localStorageKey = 'userData';
+  const savedUserData = localStorage.getItem(localStorageKey);
+  const initialUserData = savedUserData
+    ? JSON.parse(savedUserData)
+    : {
+        name: 'Convidado',
+        email: 'convidado@email.com',
+        password: 'convidado123',
+      };
+  const [userData, setUserData] = useState(initialUserData);
+
+  useEffect(() => {
+    localStorage.setItem(localStorageKey, JSON.stringify(userData));
+  }, [userData]);
 
   function updateUser(name: string, email: string, password: string) {
-    setName(name);
-    setEmail(email);
-    setPassword(password);
+    setUserData({ name, email, password });
   }
 
   return (
     <UserContext.Provider
       value={{
-        name,
-        email,
-        password,
+        name: userData.name,
+        email: userData.email,
+        password: userData.password,
         updateUser,
       }}
     >

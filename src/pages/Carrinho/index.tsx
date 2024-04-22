@@ -4,9 +4,11 @@ import { useContext } from 'react';
 import './styles.css';
 
 export function Carrinho() {
-  const { cartItems } = useContext(CartContext);
+  const { cartItems, totalItems } = useContext(CartContext);
 
   console.log(cartItems);
+  console.log(totalItems);
+  
 
   return (
     <CartProvider>

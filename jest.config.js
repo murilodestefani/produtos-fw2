@@ -8,6 +8,7 @@ module.exports = {
   transform: {
     '^.+\\.(js|jsx|ts|tsx)$': 'ts-jest',
     '^.+\\.css$': 'jest-transform-stub',
+    '^.+\\.jsx?$': 'babel-jest',
   },
   transformIgnorePatterns: ['node_modules/(?!your-module)'],
   setupFilesAfterEnv: ['<rootDir>/setupTests.ts'],
